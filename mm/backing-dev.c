@@ -16,7 +16,8 @@ static atomic_long_t bdi_seq = ATOMIC_LONG_INIT(0);
 
 struct backing_dev_info default_backing_dev_info = {
 	.name		= "default",
-	.ra_pages	= VM_MAX_READAHEAD * 1024 / PAGE_CACHE_SIZE,
+	.ra_pages  = INITIAL_VM_MAX_READAHEAD
+		>> (PAGE_CACHE_SHIFT - 10),
 	.state		= 0,
 	.capabilities	= BDI_CAP_MAP_COPY,
 };

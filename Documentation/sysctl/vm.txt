@@ -35,6 +35,7 @@ Currently, these files are in /proc/sys/vm:
 - laptop_mode
 - legacy_va_layout
 - lowmem_reserve_ratio
+- max_readahead
 - max_map_count
 - memory_failure_early_kill
 - memory_failure_recovery
@@ -335,6 +336,16 @@ pages of higher zones on the node.
 
 If you would like to protect more pages, smaller values are effective.
 The minimum value is 1 (1/1 -> 100%).
+
+==============================================================
+max_readahead:
+This file contains the default maximum readahead that would be
+used, when new disks would be added to the system.
+
+Also filesystems which use default_backing_dev_info would also
+use this new value, even if they were already mounted.
+
+xfs, btrfs, nilfs, raw, mtd use the default_backing_dev_info.
 
 ==============================================================
 
