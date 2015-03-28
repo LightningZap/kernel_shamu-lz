@@ -233,7 +233,7 @@ int force_page_cache_readahead(struct address_space *mapping, struct file *filp,
 	while (nr_to_read) {
 		int err;
 
-		unsigned long this_chunk = (2 * 1024 * 1024) / PAGE_CACHE_SIZE;
+		unsigned long this_chunk = (2 * 4096 * 4096) / PAGE_CACHE_SIZE;
 
 		if (this_chunk > nr_to_read)
 			this_chunk = nr_to_read;

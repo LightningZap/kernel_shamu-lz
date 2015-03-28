@@ -1143,7 +1143,7 @@ static long bdi_min_pause(struct backing_dev_info *bdi,
 	 * (N * 10ms) on 2^N concurrent tasks.
 	 */
 	if (hi > lo)
-		t += (hi - lo) * (10 * HZ) / 1024;
+		t += (hi - lo) * (10 * HZ) / 4096;
 
 	/*
 	 * This is a bit convoluted. We try to base the next nr_dirtied_pause
