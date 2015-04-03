@@ -424,9 +424,6 @@ typedef struct dhd_pub {
 #ifdef GSCAN_SUPPORT
 	bool lazy_roam_enable;
 #endif /* GSCAN_SUPPORT */
-	uint8 *soc_ram;
-	uint32 soc_ram_length;
-	uint32 memdump_enabled;
 } dhd_pub_t;
 
 #if defined(BCMWDF)
