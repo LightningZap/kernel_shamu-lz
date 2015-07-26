@@ -1,8 +1,8 @@
 VERSION = 3
 PATCHLEVEL = 10
 SUBLEVEL = 40
-EXTRAVERSION =
-NAME = TOSSUG Baby Fish
+EXTRAVERSION = +2.0
+NAME = Thomas.Raines
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
