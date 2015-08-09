@@ -167,7 +167,7 @@
 #define FLASH_RAMP_UP_DELAY_US		1000
 #define FLASH_RAMP_DN_DELAY_US		2160
 
-#define LED_TRIGGER_DEFAULT		"none"
+#define LED_TRIGGER_DEFAULT		"battery-charging-blink-full-solid"
 
 #define RGB_LED_SRC_SEL(base)		(base + 0x45)
 #define RGB_LED_EN_CTL(base)		(base + 0x46)
