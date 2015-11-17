@@ -925,12 +925,6 @@ struct hal_vc1e_perf_cfg_type {
 	} i_frame, p_frame, b_frame;
 };
 
-struct hal_vpe_color_space_conversion {
-	u32 csc_matrix[HAL_MAX_MATRIX_COEFFS];
-	u32 csc_bias[HAL_MAX_BIAS_COEFFS];
-	u32 csc_limit[HAL_MAX_LIMIT_COEFFS];
-};
-
 enum hal_video_color_space {
 	HAL_VIDEO_COLOR_SPACE_601,
 	HAL_VIDEO_COLOR_SPACE_709,
