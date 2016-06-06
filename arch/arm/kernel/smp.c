@@ -346,11 +346,11 @@ asmlinkage void __cpuinit secondary_start_kernel(void)
 	if (smp_ops.smp_secondary_init)
 		smp_ops.smp_secondary_init(cpu);
 
-	smp_store_cpu_info(cpu);
-
 	notify_cpu_starting(cpu);
 
 	calibrate_delay();
+
+	smp_store_cpu_info(cpu);
 
 	/*
 	 * OK, now it's safe to let the boot CPU continue.  Wait for
@@ -726,9 +726,9 @@ void smp_send_stop(void)
 		smp_cross_call(&mask, IPI_CPU_STOP);
 
 	/* Wait up to one second for other CPUs to stop */
-	timeout = MSEC_PER_SEC;
+	timeout = USEC_PER_SEC;
 	while (num_active_cpus() > 1 && timeout--)
-		mdelay(1);
+		udelay(1);
 
 	if (num_active_cpus() > 1)
 		pr_warning("SMP: failed to stop secondary CPUs\n");

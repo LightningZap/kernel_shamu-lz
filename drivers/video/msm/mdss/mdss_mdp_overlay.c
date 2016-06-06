@@ -599,7 +599,7 @@ int mdss_mdp_overlay_pipe_setup(struct msm_fb_data_type *mfd,
 		}
 
 		if (pipe == NULL) {
-			pr_err_ratelimited("error allocating pipe. flags=0x%x\n",
+			pr_err("error allocating pipe. flags=0x%x\n",
 				req->flags);
 			return -ENODEV;
 		}
@@ -2115,7 +2115,7 @@ static ssize_t dynamic_fps_sysfs_wta_dfps(struct device *dev,
 		rc = mdss_mdp_ctl_update_fps(mdp5_data->ctl, dfps);
 	}
 	if (!rc) {
-		pr_debug("%s: configured to '%d' FPS\n", __func__, dfps);
+		pr_info("%s: configured to '%d' FPS\n", __func__, dfps);
 	} else {
 		pr_err("Failed to configure '%d' FPS. rc = %d\n",
 							dfps, rc);
@@ -2307,8 +2307,7 @@ static ssize_t hbm_show(struct device *dev,
 	}
 
 	return snprintf(buf, PAGE_SIZE, "%d\n",
-			ctl->panel_data->panel_info.hbm_off_state ? 1 :
-				ctl->panel_data->panel_info.hbm_state);
+			ctl->panel_data->panel_info.hbm_state);
 }
 
 static ssize_t hbm_store(struct device *dev,

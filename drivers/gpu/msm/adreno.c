@@ -244,10 +244,6 @@ static const struct input_device_id adreno_input_ids[] = {
 	{
 		.flags = INPUT_DEVICE_ID_MATCH_EVBIT,
 		.evbit = { BIT_MASK(EV_ABS) },
-		/* assumption: MT_.._X & MT_.._Y are in the same long */
-		.absbit = { [BIT_WORD(ABS_MT_POSITION_X)] =
-				BIT_MASK(ABS_MT_POSITION_X) |
-				BIT_MASK(ABS_MT_POSITION_Y) },
 	},
 	{ },
 };
@@ -1961,7 +1957,6 @@ static int adreno_start(struct kgsl_device *device, int priority)
 		set_user_nice(current, _wake_nice);
 
 	ret = _adreno_start(adreno_dev);
-
 	if (priority)
 		set_user_nice(current, nice);
 
