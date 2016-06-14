@@ -228,10 +228,8 @@ int usb_wwan_write(struct tty_struct *tty, struct usb_serial_port *port,
 			usb_pipeendpoint(this_urb->pipe), i);
 
 		err = usb_autopm_get_interface_async(port->serial->interface);
-		if (err < 0) {
-			clear_bit(i, &portdata->out_busy);
+		if (err < 0)
 			break;
-		}
 
 		/* send the data */
 		memcpy(this_urb->transfer_buffer, buf, todo);
