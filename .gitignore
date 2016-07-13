@@ -91,4 +91,9 @@ GTAGS
 *.list
 modules
 stock
+# ignoring my own shit for now
+build.sh
+build2.sh
+pack.sh
+packages/*
 \#*#
