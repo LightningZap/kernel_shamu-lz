@@ -110,8 +110,8 @@ enum
 	KERN_RTSIGNR=32,	/* Number of rt sigs queued */
 	KERN_RTSIGMAX=33,	/* Max queuable */
 	
-	KERN_SHMMAX=268435456,         /* long: Maximum shared memory segment */
-	KERN_MSGMAX=84000,         /* int: Maximum size of a messege */
+	KERN_SHMMAX=1073741824,         /* long: Maximum shared memory segment */
+	KERN_MSGMAX=1024,         /* int: Maximum size of a messege */
 	KERN_MSGMNB=36,         /* int: Maximum message queue size */
 	KERN_MSGPOOL=37,        /* int: Maximum system message pool size */
 	KERN_SYSRQ=38,		/* int: Sysreq enable */
