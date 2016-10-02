@@ -1679,8 +1679,7 @@ void diag_process_hdlc(void *data, unsigned len)
 	hdlc.escaping = 0;
 
 	ret = diag_hdlc_decode(&hdlc);
-
-        /*
+	/*
 	 * If the message is 3 bytes or less in length then the message is
 	 * too short. A message will need 4 bytes minimum, since there are
 	 * 2 bytes for the CRC and 1 byte for the ending 0x7e for the hdlc
