@@ -126,6 +126,7 @@ static void *get_cpu_dbs_info_s(int cpu)				\
  * cdbs: common dbs
  * od_*: On-demand governor
  * cs_*: Conservative governor
+ * ex_*: ElementalX governor
  */
 
 /* Per cpu structures */
@@ -176,6 +177,12 @@ struct cs_cpu_dbs_info_s {
 	unsigned int enable:1;
 };
 
+struct ex_cpu_dbs_info_s {
+	struct cpu_dbs_common_info cdbs;
+	unsigned int down_floor;
+	unsigned int enable:1;
+};
+
 /* Per policy Governors sysfs tunables */
 struct od_dbs_tuners {
 	unsigned int ignore_nice_load;
@@ -193,6 +200,18 @@ struct cs_dbs_tuners {
 	unsigned int up_threshold;
 	unsigned int down_threshold;
 	unsigned int freq_step;
+};
+
+struct ex_dbs_tuners {
+	unsigned int ignore_nice_load;
+	unsigned int sampling_rate;
+	unsigned int up_threshold;
+	unsigned int down_differential;
+	unsigned int gboost;
+	unsigned int gboost_min_freq;
+	unsigned int active_floor_freq;
+	unsigned int max_screen_off_freq;
+	unsigned int sampling_down_factor;
 };
 
 /* Common Governor data across policies */
