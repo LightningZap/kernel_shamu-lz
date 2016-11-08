@@ -85,7 +85,6 @@ static inline void bfq_group_init_entity(struct bfqio_cgroup *bgrp,
 					 "bgrp->weight %d\n", bgrp->weight);
 			BUG();
 		}
-
 		entity->new_weight = bgrp->weight;
 		entity->new_ioprio = bfq_weight_to_ioprio(bgrp->weight);
 	}

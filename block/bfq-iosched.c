@@ -3827,6 +3827,7 @@ static int bfq_init_queue(struct request_queue *q, struct elevator_type *e)
 	}
 
 	bfqd->root_group = bfqg;
+	bfq_init_entity(&bfqd->oom_bfqq.entity, bfqd->root_group);
 
 #ifdef CONFIG_CGROUP_BFQIO
 	bfqd->active_numerous_groups = 0;
