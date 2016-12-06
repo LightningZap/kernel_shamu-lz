@@ -2967,6 +2967,7 @@ static void bfq_set_next_ioprio_data(struct bfq_queue *bfqq, struct bfq_io_cq *b
 		bfq_clear_bfqq_idle_window(bfqq);
 		break;
 	}
+
 	if (bfqq->entity.new_ioprio < 0 ||
 	    bfqq->entity.new_ioprio >= IOPRIO_BE_NR) {
 		printk(KERN_CRIT "bfq_set_next_ioprio_data: new_ioprio %d\n",
@@ -3828,7 +3829,6 @@ static int bfq_init_queue(struct request_queue *q, struct elevator_type *e)
 
 	bfqd->root_group = bfqg;
 	bfq_init_entity(&bfqd->oom_bfqq.entity, bfqd->root_group);
-
 #ifdef CONFIG_CGROUP_BFQIO
 	bfqd->active_numerous_groups = 0;
 #endif
