@@ -126,7 +126,6 @@ static void *get_cpu_dbs_info_s(int cpu)				\
  * cdbs: common dbs
  * od_*: On-demand governor
  * cs_*: Conservative governor
- * ex_*: ElementalX governor
  */
 
 /* Per cpu structures */
