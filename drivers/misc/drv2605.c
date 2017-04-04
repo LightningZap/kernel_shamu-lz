@@ -1282,7 +1282,6 @@ static int drv260x_init(void)
 	reval = sysfs_create_file(vibe_kobj, &dev_attr_pwmvalue.attr);
 	if (reval) {
 		printk(KERN_ALERT "drv260x: sysfs_create_file failed for pwmvalue\n");
-
 	}
 
 	printk(KERN_ALERT "drv260x: initialized\n");
